@@ -9,6 +9,9 @@ class DonutMaker{
         this._donutCount++;
     }
 
+    recordAutoClickerPurchase(){
+        this._autoClickerCount++;
+    }
 
 
     get donutCount(){

@@ -26,15 +26,29 @@ describe('FEATURE : Have a way to count donuts', () => {
 
     });
 
-   
-
-
-
 });
 
+describe('FEATURE : Be able to purchase the first Auto Clicker with 100 donuts from your donut count', () => {        
+    describe('Can add to auto clicker count', () => {            
+        let underTest;
+                
+        beforeEach(() => {                
+            underTest = new DonutMaker;            
+        });
+                
+        it('Should start with an auto clicker count of 0.', () =>{               
+             expect(underTest._autoClickerCount).toBe(0);            
+        });
+
+        it('Can add to the Auto Clicker count', () =>{                
+            underTest.recordAutoClickerPurchase();                
+            expect(underTest._autoClickerCount).toBe(1);            
+        });
 
 
 
 
 
+    });
+});
 
