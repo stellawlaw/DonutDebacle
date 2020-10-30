@@ -3,6 +3,8 @@ class DonutMaker{
     constructor(){
         this._donutCount= 0;
         this._autoClickerCount= 0;
+        this._initialAutoClickerCost= 100;
+        this._additionalAutoClickerCost = this._initialAutoClickerCost*.10;
     }
 
     recordClick(){
@@ -14,7 +16,13 @@ class DonutMaker{
     }
 
     subtractInitialAutoClickerPurchase(){
-        this._donutCount-=100;
+        this._donutCount-=this._initialAutoClickerCost;
+        
+    }
+
+    subtractAdditionalAutoClickerPurchase(){
+        this._donutCount-= (this._initialAutoClickerCost + this._additionalAutoClickerCost);
+        
     }
 
     get donutCount(){

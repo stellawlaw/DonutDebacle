@@ -28,7 +28,7 @@ describe('FEATURE : Have a way to count donuts', () => {
 
 });
 
-describe('FEATURE : Be able to purchase the first Auto Clicker with 100 donuts from your donut count', () => {        
+describe('FEATURE : Be able to purchase the first Auto Clicker with 100 donuts from your donut count.', () => {        
     describe('Can add to auto clicker count', () => {            
         let underTest;
                 
@@ -52,12 +52,23 @@ describe('FEATURE : Be able to purchase the first Auto Clicker with 1
             expect(underTest._autoClickerCount).toBe(1);            
         });
 
-
-
-
-
-
-
     });
 });
+
+describe('FEATURE : The cost of each Auto Clicker will go up with each purchase.', () =>{
+    let underTest;
+    beforeEach(() => {
+        underTest = new DonutMaker;
+    });
+    
+    it('Should increase the cost of the second Auto Clicker by an additional ten percent.', () =>{
+        underTest.subtractAdditionalAutoClickerPurchase();
+        expect(underTest._donutCount).toBe(-110);
+    });
+
+});
+
+
+
+
 
