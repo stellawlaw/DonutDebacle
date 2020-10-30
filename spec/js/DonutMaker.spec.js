@@ -45,6 +45,15 @@ describe('FEATURE : Be able to purchase the first Auto Clicker with 1
             expect(underTest._autoClickerCount).toBe(1);            
         });
 
+        it('Can subtract Auto Clicker cost from donut count', () =>{                
+            underTest.subtractInitialAutoClickerPurchase();                
+            underTest.recordAutoClickerPurchase();                
+            expect(underTest._donutCount).toBe(-100);                
+            expect(underTest._autoClickerCount).toBe(1);            
+        });
+
+
+
 
 
 

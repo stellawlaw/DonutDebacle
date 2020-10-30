@@ -13,10 +13,16 @@ class DonutMaker{
         this._autoClickerCount++;
     }
 
+    subtractInitialAutoClickerPurchase(){
+        this._donutCount-=100;
+    }
 
     get donutCount(){
         return this._donutCount;
     }
+
+    get autoClickerCount(){        
+        return this._autoClickerCount;    }
 
    
 
