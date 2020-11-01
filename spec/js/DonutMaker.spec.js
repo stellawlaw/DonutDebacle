@@ -40,18 +40,6 @@ describe('FEATURE : Be able to purchase the first Auto Clicker with 1
              expect(underTest._autoClickerCount).toBe(0);            
         });
 
-        it('Can add to the Auto Clicker count', () =>{                
-            underTest.recordAutoClickerPurchase();                
-            expect(underTest._autoClickerCount).toBe(1);            
-        });
-
-        it('Can subtract Auto Clicker cost from donut count', () =>{                
-            underTest.subtractInitialAutoClickerPurchase();                
-            underTest.recordAutoClickerPurchase();                
-            expect(underTest._donutCount).toBe(-100);                
-            expect(underTest._autoClickerCount).toBe(1);            
-        });
-
     });
 });
 
@@ -59,14 +47,45 @@ describe('FEATURE : The cost of each Auto Clicker will go up with each purchase.
     let underTest;
     beforeEach(() => {
         underTest = new DonutMaker;
+        underTest.stashDonutsForTesting();
+
     });
     
     it('Should increase the cost of the second Auto Clicker by an additional ten percent.', () =>{
-        underTest.subtractAdditionalAutoClickerPurchase();
-        expect(underTest._donutCount).toBe(-110);
+        underTest.subtractAutoClickerPurchase();
+        expect(underTest.autoClickerCost).toBe(100);
+        expect(underTest._autoClickerCount).toBe(1);
+        underTest.subtractAutoClickerPurchase();
+        expect(underTest.autoClickerCost).toBe(110);
+        expect(underTest._donutCount).toBe(790);
+    });
+
+    it('Should increase the cost of subsequent Auto Clicker by an additional ten percent', () =>{
+        underTest.subtractAutoClickerPurchase();
+        underTest.subtractAutoClickerPurchase();
+        underTest.subtractAutoClickerPurchase();
+        expect(underTest._donutCount).toBe(669);
+        expect(underTest._autoClickerCount).toBe(3);
+
     });
 
 });
+
+// describe('FEATURE : Ensure that there are enough clicks to buy a Auto Clicker.', () =>{
+//     underTest = new DonutMaker;
+//     it('Should prevent Auto Clicker count from going up if there are not enough clicks to purchase a autoclicker', () => {
+//         underTest.recordClick();
+//         underTest.recordClick();
+//         underTest.recordClick();
+//         underTest.recordClick();
+//         underTest.recordClick();
+//         underTest.recordClick();
+//         expect(underTest._donutCount).toBe(5);
+//         expect(underTest._autoClickerCount).toBe(0);
+        
+//     });
+
+// });
 
 
 
