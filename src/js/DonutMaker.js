@@ -3,7 +3,10 @@ class DonutMaker {
     constructor() {
         this._donutCount = 0;
         this._autoClickerCount = 0;
-        
+        this._donutMultiplierCount = 0;
+        this._donutMultiplierCost = 0;
+
+
     }
 
     stashDonutsForTesting() {
@@ -24,8 +27,8 @@ class DonutMaker {
         this._donutCount++;
     }
 
-    recordDonutMultiplier(){
-        this.donutMultiplier++;
+    recordDonutMultiplier() {
+        this._donutMultiplierCount++;
     }
 
     get donutCount() {
@@ -55,11 +58,32 @@ class DonutMaker {
 
     }
 
-    
+    buyDonutMultiplier() {
+
+        if (this._donutMultiplierCount == 0) {
+            this._donutMultiplierCost = 10;
+        } else {
+            let m = this._donutMultiplierCount;
+            this._donutMultiplierCost = 10 * Math.pow(1.1, m);
+        }
+        if (this._donutCount >= this._donutMultiplierCost) {
+            this._donutCount -= this._donutMultiplierCost;
+            this._donutMultiplierCount++
+        }
+        else {
+
+            this._donutCount = this._donutCount;
+
+        }
+
+
+
+
+    }
+
+
+
+
+
+
 }
-
-
-
-
-
-

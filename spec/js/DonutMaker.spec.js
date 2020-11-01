@@ -42,7 +42,7 @@ describe('FEATURE : Be able to purchase the first Auto Clicker with 1
 
         it('Should be able record an autoclick', () => {
             underTest.recordAutoClick();
-            expect(undertest._donutCount).toBe(1);
+            expect(underTest._donutCount).toBe(1);
 
         });
 
@@ -119,10 +119,21 @@ describe('Iteration 2- FEATURE 1 : Be able to purchase the first Donut Multiplie
     let underTest;
     beforeEach(() => {
         underTest = new DonutMaker;
+        underTest.stashDonutsForTesting;
     });
 
-    it('Should be able to retrieve a Donut Multiplier count', () => {
-        
+    it('Should be able to add to the Donut Multiplier Count', () => {
+        underTest.recordDonutMultiplier();
+        expect(underTest._donutMultiplierCount).toBe(1);
+    });
+
+    it('Should be able to subtract amount of the Donut Multiplier cost from the donut count', () => {
+        underTest.recordDonutMultiplier();
+        expect(underTest._donutMultiplierCount).toBe(1);
+        underTest.buyDonutMultiplier();
+        underTest.stashDonutsForTesting();
+        expect(underTest._donutCount).toBe(990);
+
     });
     
     
