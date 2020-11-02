@@ -31,9 +31,10 @@ class DonutMaker {
 
     recordDonutMultiplier() {
         this._donutMultiplierCount++;
-        let d = this._donutMultiplierCount;
+        let d = this._donutMultiplierCount; 
         this._donutCount= this._donutCount + this._donutCount * Math.pow(1.2, d);
         
+      
     }
 
     get donutCount() {
@@ -60,9 +61,16 @@ class DonutMaker {
     }
 
     activateAutoClicker() {
-        this._donutCount = this._donutCount + this._autoClickerCount;
-
+        let a = this._donutMultiplierCount;
+        if(this._donutMultiplierCount>=1){
+            this._autoClickerCount = this._autoClickerCount + this._autoClickerCount * Math.pow(1.2, a);
+            this._donutCount = this._donutCount + this.autoClickerCount;
+        }
+        else{
+         this._donutCount = this._donutCount + this.autoClickerCount;
+        }
     }
+
 
     buyDonutMultiplier() {
 
@@ -86,8 +94,10 @@ class DonutMaker {
     }
 
 
-
-
-
-
 }
+
+
+
+
+
+

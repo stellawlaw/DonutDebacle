@@ -188,6 +188,37 @@ describe('Iteration 2-FEATURE 4: The first Donut Multiplier should increase the 
     });
 });
 
+describe('Iteration 2- FEATURE 5: The amount of the subsequent Donut Multipliers click bonus will go up exponentially.', () => {
+    let underTest;
+    beforeEach(() => {
+        underTest = new DonutMaker;
+        underTest.stashDonutsForTesting();
+    });
+
+    it('Should increase the click value multiplier to 1.2 to the xth power, where x is the amount of the Donut Multipliers count.', () => {
+        underTest.recordDonutMultiplier();
+        underTest.recordDonutMultiplier();
+        expect(underTest._donutCount).toBe(5368);
+    });
+});
+
+describe('Iteration 2- FEATURE 6: The Donut Multipliers click bonus will apply to clicks from the Auto Clicker.', () => {
+    let underTest;
+    beforeEach(() => {
+        underTest = new DonutMaker;
+        underTest.stashDonutsForTesting();
+        underTest.stashAutoClickersForTesting();
+    });
+
+    it('When an Add Auto Clickers event is executed, increase the value of each Auto Clicker by the amount of the Donut Multiplier.', () => {
+        underTest.recordDonutMultiplier();
+        underTest.activateAutoClicker();
+        expect(underTest._autoClickerCount).toBe(22);
+        expect(underTest._donutCount).toBe(2222);
+      
+    });
+});
+
 
 
 
