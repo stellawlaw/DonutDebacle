@@ -89,7 +89,6 @@ describe('Iteration 1-FEATURE 4 : Ensure that there are enough clicks to buy a A
     let underTest;
     beforeEach(() => {
         underTest = new DonutMaker;
-        underTest.autoClickerPurchase;
     });
 
     it('Should prevent Auto Clicker count from going up if there are not enough clicks to purchase a autoclicker', () => {
@@ -114,12 +113,13 @@ describe('Iteration 1-FEATURE 5 : The amount of Auto Clickers affect the amount 
     beforeEach(() => {
         underTest = new DonutMaker;
         underTest.stashAutoClickersForTesting();
+        underTest.stashDonutsForTesting();
     });
 
     it('Should increase the donut total by the amount of Auto Clickers owned when activate Auto Clickers is executed.', () => {
         underTest.activateAutoClicker();
         underTest.recordManualClick();
-        expect(underTest._donutCount).toBe(11);
+        expect(underTest._donutCount).toBe(1011);
     });
 });
 
@@ -136,7 +136,7 @@ describe('Iteration 2- FEATURE 1 : Be able to purchase the first Donut Multiplie
     });
 
     it('Should be able to subtract amount of the Donut Multiplier cost from the donut count', () => {
-        underTest.buyDonutMultiplier();
+        underTest.donutMultiplierPurchase();
         expect(underTest._donutCount).toBe(990);
 
     });
@@ -151,14 +151,14 @@ describe('Iteration 2- FEATURE 2:The cost of each Donut Multiplier will go up wi
     });
 
     it('Should Increase cost of second Donut Multiplier by an additional 10 percent', () => {
-        underTest.buyDonutMultiplier();
-        expect(underTest._donutCount).toBe(990);
-        underTest.buyDonutMultiplier();
-        expect(underTest._donutCount).toBe(979);
-        underTest.buyDonutMultiplier();
-        expect(underTest._donutCount).toBe(966.9);
-        // underTest.buyDonutMultiplier();
-        // expect(underTest._donutCount).toEqual(953.59);
+        underTest.donutMultiplierPurchase();
+        expect(underTest.donutCount).toBe(990);
+        underTest.donutMultiplierPurchase();
+        expect(underTest.donutCount).toBe(979);
+        underTest.donutMultiplierPurchase();
+        expect(underTest.donutCount).toBe(966.9);
+        underTest.donutMultiplierPurchase();
+        expect(underTest.donutCount).toEqual(953.59);
     });
 });
 
@@ -168,8 +168,10 @@ describe('Iteration 2-FEATURE 3: Ensure that there are enough donuts to buy a Do
         underTest = new DonutMaker;
     });
 
-    it('Should prevent the Donut Multiplier count from going up if there are not enough donuts to purhcase a donut multiplier.', () => {
-        underTest.buyDonutMultiplier();
+    it('Should prevent the Donut Multiplier count from going up if there are not enough donuts to purchase a donut multiplier.', () => {
+        underTest.recordManualClick();
+        underTest.recordManualClick();
+        underTest.donutMultiplierPurchase();
         expect(underTest._donutMultiplierCount).toBe(0);
     });
     
