@@ -3,12 +3,12 @@ class DonutMaker {
     constructor() {
         this._donutCount = 0;
         this._autoClickerCount = 0;
+        this._autoClickerCost = 0;
         this._donutMultiplierCount = 0;
         this._donutMultiplierCost = 0;
 
-
     }
-
+    //Testers
     stashDonutsForTesting() {
         this._donutCount += 1000;
     }
@@ -16,11 +16,13 @@ class DonutMaker {
     stashAutoClickersForTesting() {
         this._autoClickerCount += 10;
     }
+
+
     get autoClickerCount() {
         return this._autoClickerCount;
     }
 
-    recordClick() {
+    recordManualClick() {
         this._donutCount++;
     }
     recordAutoClick() {
@@ -29,13 +31,17 @@ class DonutMaker {
 
     recordDonutMultiplier() {
         this._donutMultiplierCount++;
+        let d = this._donutMultiplierCount;
+        this._donutCount= this._donutCount + this._donutCount * Math.pow(1.2, d);
+        
     }
 
     get donutCount() {
         return this._donutCount;
     }
 
-    subtractAutoClickerPurchase() {
+    autoClickerPurchase() {
+
         if (this._autoClickerCount == 0) {
             this.autoClickerCost = 100;
         }
@@ -54,7 +60,7 @@ class DonutMaker {
     }
 
     activateAutoClicker() {
-        this._donutCount = this._donutCount + (this._autoClickerCount);
+        this._donutCount = this._donutCount + this._autoClickerCount;
 
     }
 
@@ -62,22 +68,20 @@ class DonutMaker {
 
         if (this._donutMultiplierCount == 0) {
             this._donutMultiplierCost = 10;
-        } else {
+        } 
+        else {
             let m = this._donutMultiplierCount;
             this._donutMultiplierCost = 10 * Math.pow(1.1, m);
         }
-        if (this._donutCount >= this._donutMultiplierCost) {
+
+        if (this._donutCount >= this._donutMultiplierCost) {        
             this._donutCount -= this._donutMultiplierCost;
-            this._donutMultiplierCount++
+            this._donutMultiplierCount++;
+
         }
         else {
-
             this._donutCount = this._donutCount;
-
         }
-
-
-
 
     }
 
