@@ -1,14 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Module 4 Project</title>
+    <title>Donut Madness</title>
+    <link rel="stylesheet" href="src/css/style.css">
+    <link rel="stylesheet" href="src/css/layout.css">
 </head>
+
 <body>
+
+    <header>
+        <nav class="menu">
+            <ul class="menu-items">
+                <li class="company-info-list"><a href>Company Information </a></li>
+                <li class="developer-info-list"><a href>About the Developer</a></li>
+                <li class="inspiration-link"><a href>Our Inspiration</a></li>
+            </ul>
+        </nav>
+    </header>
     <div class="container">
-        <div class="anchor"></div>
+        <h1 class="page-header">DONUT MADNESS</h1>
+
+        <main class="main-page">
+            <section class="levels">
+                <h2 class="level-header">LEVELS</h2>
+                <p>Placeholder</p>
+                <p>Placeholder</p>
+                <p>Placeholder</p>
+            </section>
+
+            <section class="donut-main">
+
+                <img class="donut-icon" src="src/images/donut.png" alt="donut-picture" height="300px" width="300px">
+
+                <button class="donut-button" id="button">Click for more donuts!</button>
+                <p class="donut-count">Your donut count is: </p>
+            </section>
+
+            <section class="shop">
+                <h2>SHOP</h2>
+                <p class="auto-clicker-cost">Auto Clicker Cost:</p>
+                <button class="autoclicker-purchase-button">Buy an Autoclicker!</button>
+                <p class="auto-clicker-count">Auto Clicker Count:</p>
+
+                <p class="donut-multiplier-cost">Donut Multiplier Cost:</p>
+                <button class="donut-multiplier-purchase-button">Buy a Donut Multiplier!</button>
+                <p class="donut-multiplier-count">Donut Multiplier Count:</p>
+            </section>
+
+        </main>
+
     </div>
     <script src="/src/app.js"></script>
+
 </body>
+
 </html>
