@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Donut Debacle</title>
-    <link rel="stylesheet" href="src/css/style.css">
-    <link rel="stylesheet" href="src/css/layout.css">
+    <link rel="stylesheet" href="/src/css/style.css">
+    <link rel="stylesheet" href="/src/css/layout.css">
 </head>
 
 <body>
@@ -14,19 +14,21 @@
     <header>
         <nav class="menu">
             <ul class="menu-items">
-                <button class="company-info-list" id="company-info">Company Information </button></li>
-            
-                <button class="developer-info-list" id="developer-info">About the Developer</button></li>
+                <button class="company-info-list">Company Information </button></li>
 
-                <button class="inspiration-link" id="inspiration" onclick="window.location.href='https://orteil.dashnet.org/cookieclicker';">Our Inspiration</button></li>
+                <button class="developer-info-list">About the Developer</button></li>
+
+                <button class="inspiration-link"
+                    onclick="window.location.href='https://orteil.dashnet.org/cookieclicker';">Our Inspiration</button>
+                </li>
             </ul>
         </nav>
     </header>
     <div class="container">
-        
-<h1 class="page-header"><em>DONUT DEBACLE</em></h1>
+
+        <h1 class="page-header"><em>DONUT DEBACLE</em></h1>
         <main class="main-page">
-            
+
             <section class="levels">
                 <h2 class="level-header">LEVELS</h2>
                 <p>Placeholder</p>
@@ -37,9 +39,9 @@
             <section class="donut-main">
 
                 <img class="donut-icon" src="src/images/donut.png" alt="donut-picture" height="300px" width="300px">
+                <div class="donut-count">100</div>
+                <button class="donut-button">Click for more donuts!</button>
 
-                <button class="donut-button" id="button">Click for more donuts!</button>
-                <p class="donut-count">Donut Count: </p>
             </section>
 
             <section class="shop">
@@ -56,7 +58,8 @@
         </main>
 
     </div>
-    <script src="/src/js/app.js"></script>
+    <script src="/src/js/app.js" type="module"></script>
+    <script src="/src/js/DonutMaker.js"></script>
 
 </body>
 

@@ -88,6 +88,8 @@ class DonutMaker {
 
 }
 
+export{DonutMaker}
+
 
 
 
