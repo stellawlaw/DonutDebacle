@@ -14,11 +14,13 @@
 .menu-items li{
     display: inline;
     list-style: none;
+    padding-left: 20px;;
 }
-
 
 .page-header{
     text-align: center;
+    max-width: 1000px;
+    width: 90%;
 }
 
 .container{
@@ -31,11 +33,22 @@
 }
 .main-page{
     display: grid;
-    grid-template-rows: 300px;
+    grid-template-rows: 100px auto;
     grid-template-columns: repeat(3, 1fr);
+    max-width: 1000px;
+    width: 90%;
 }
 
+.donut-button{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
 
+.donut-count {
+ text-align: center;
+
+}
 
 .shop{
     margin-left: 200px;
