@@ -17,3 +17,15 @@ html{
 
 }
 
+.autoclicker-purchase-button{
+    opacity: .45;
+}
+
+.donut-multiplier-purchase-button{
+    opacity: .45;
+}
+
+.ungreybutton{
+    opacity: 1;
+}
+

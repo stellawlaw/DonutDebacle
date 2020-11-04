@@ -49,8 +49,7 @@ class DonutMaker {
 
     recordDonutMultiplier() {
         this._donutMultiplierCount++;
-        let d = this._donutMultiplierCount;
-        this._donutCount = this._donutCount + this._donutCount * Math.pow(1.2, d);
+        this._donutCount = this._donutCount + this._donutCount * Math.pow(1.2, this._donutMultiplierCount);
     }
 
     activateAutoClicker() {
