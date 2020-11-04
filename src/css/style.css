@@ -4,13 +4,16 @@
 }
 
 html{
-    background-color:rgba(4, 4, 128, 0.274);
+    background-color:var(--blue);
     color: white;
 }
 
 :root{
-    --One-color: 
-    --Two-color:
+    --yellow: #FFBE0B;
+    --orange: #FB5607;   
+    --purple: #8338EC;  
+    --blue: #3A86FF;
+    --pink: #FF006E;
 
 }
 
