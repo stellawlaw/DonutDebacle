@@ -30,49 +30,102 @@ backdrop.addEventListener("click", closeModal);
 
 
 //Donut Counter Elements
-const donutMaker = new DonutMaker();
+const newDonutMaker = new DonutMaker();
 
 const updateDonutCounter = function (donutMaker) {
     const donutCounter = document.querySelector(".donut-count");
     donutCounter.innerText = donutMaker.donutCount;
 
-}
+    updateAutoClickerButton(donutMaker);
+    updateDonutMultiplierButton(donutMaker);
 
-updateDonutCounter(donutMaker);
+};
+
+updateDonutCounter(newDonutMaker);
 const donutClick = document.querySelector(".donut-button");
 
 donutClick.addEventListener("click", () => {
-    donutMaker.recordManualClick();
-    updateDonutCounter(donutMaker);
-})
+    newDonutMaker.recordManualClick();
+    updateDonutCounter(newDonutMaker);
+});
+
+//reset button
+updateDonutCounter(newDonutMaker);
+const resetClick = document.querySelector(".reset-button");
+
+resetClick.addEventListener("click", () => {
+    newDonutMaker.reset();
+    updateDonutCounter(newDonutMaker);
+    updateAutoClickerCounter(newDonutMaker);
+    updateDonutMultiplierCounter(newDonutMaker);
+});
+
+
+function updateAutoClickerButton(donutMaker) {
+    const lightUpAutoClickerButton = document.querySelector(".autoclicker-purchase-button");
+    lightUpAutoClickerButton.classList.add("ungreybutton");
+    if (donutMaker.donutCount < 100) {
+        lightUpAutoClickerButton.classList.toggle("ungreybutton");
+    };
+}
+
+function updateDonutMultiplierButton(donutMaker) {
+    const lightUpDonutMultiplierButton = document.querySelector(".donut-multiplier-purchase-button");
+    lightUpDonutMultiplierButton.classList.add("ungreybutton");
+    if (donutMaker.donutCount < 10) {
+        lightUpDonutMultiplierButton.classList.toggle("ungreybutton");
+    };
+}
 
 //AutoClicker Elements
 
-const updateAutoClickerCounter = function (donutMaker) {
+const updateAutoClickerCounter = function (newDonutMaker) {
     const autoClickerCounter = document.querySelector(".auto-clicker-count");
-    autoClickerCounter.innerText = donutMaker.autoClickerCount;
-}
+    autoClickerCounter.innerText = newDonutMaker.autoClickerCount;
+};
 
-updateAutoClickerCounter(donutMaker);
+updateAutoClickerCounter(newDonutMaker);
 const autoClickerClick = document.querySelector(".autoclicker-purchase-button");
 
 autoClickerClick.addEventListener("click", () => {
-    donutMaker.autoClickerPurchase();
-    updateAutoClickerCounter(donutMaker);
-})
+    newDonutMaker.autoClickerPurchase();
+    updateAutoClickerCounter(newDonutMaker);
+});
 
 //Donut Multiplier Elements
 
-const updateDonutMultiplierCounter = function (donutMaker) {
+const updateDonutMultiplierCounter = function (newDonutMaker) {
     const donutMultiplierCounter = document.querySelector(".donut-multiplier-count");
-    donutMultiplierCounter.innerText = donutMaker.donutMultiplierCount;
-}
+    donutMultiplierCounter.innerText = newDonutMaker.donutMultiplierCount;
+};
 
-updateDonutMultiplierCounter(donutMaker);
+updateDonutMultiplierCounter(newDonutMaker);
 const donutMultiplierClick = document.querySelector(".donut-multiplier-purchase-button");
 
 donutMultiplierClick.addEventListener("click", () => {
-    donutMaker.donutMultiplierPurchase();
-    updateDonutMultiplierCounter(donutMaker);
-})
+    newDonutMaker.donutMultiplierPurchase();
+    updateDonutMultiplierCounter(newDonutMaker);
+
+});
+
+
+//AutoClicker Cost update
+// const updateAutoClickerCost = function (newDonutMaker) {
+//     const autoClickerCost = document.querySelector(".auto-clicker-cost");
+//     autoClickerCost.innerText = newDonutMaker.autoClickerCost;
+// };
+
+// updateAutoClickerCost(newDonutMaker);
+// const autoClickerClick = document.querySelector(".autoclicker-purchase-button");
+
+// autoClickerClick.addEventListener("click", () => {
+//     newDonutMaker.autoClickerPurchase();
+//     updateAutoClickerCost(newDonutMaker);
+// });
+
+
+
+
+
+
 

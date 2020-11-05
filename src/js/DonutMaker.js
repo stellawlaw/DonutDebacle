@@ -39,6 +39,16 @@ class DonutMaker {
     }
  
     //Recording Clicks / Activation
+
+    reset(){
+        this._donutCount=0;
+        this._autoClickerCost=0;
+        this._autoClickerCount=0;
+        this._donutMultiplierCost=0;
+        this._donutMultiplierCount=0;
+        
+    }
+
     recordManualClick() {
         this._donutCount++;
     }
@@ -86,7 +96,7 @@ class DonutMaker {
 
 }
 
-export{DonutMaker}
+export{ DonutMaker }
 
 
 
