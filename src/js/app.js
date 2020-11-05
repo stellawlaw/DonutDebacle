@@ -9,11 +9,25 @@ function companyinfofunction() {
     alert("This is going to be the company information that I make up");
 }
 
-const developerInfo = document.querySelector(".developer-info-list");
-developerInfo.addEventListener("click", developerinfofunction);
-function developerinfofunction() {
-    alert("This is going to be the developer bio that I add in");
+//modal-developer info
+const developerButton = document.querySelector(".developer-info-list");
+const modal = document.querySelector(".modal");
+const backdrop = document.querySelector(".backdrop");
+
+function closeModal() {
+    modal.style.display = "none";
+    backdrop.style.display = "none";
 }
+developerButton.addEventListener("click", function () {
+    modal.style.display = "block";
+    backdrop.style.dislay = "block";
+});
+
+const exitButton = document.querySelector(".exit");
+exitButton.addEventListener("click", closeModal);
+backdrop.addEventListener("click", closeModal);
+
+
 
 //Donut Counter Elements
 const donutMaker = new DonutMaker();
@@ -21,6 +35,7 @@ const donutMaker = new DonutMaker();
 const updateDonutCounter = function (donutMaker) {
     const donutCounter = document.querySelector(".donut-count");
     donutCounter.innerText = donutMaker.donutCount;
+
 }
 
 updateDonutCounter(donutMaker);
