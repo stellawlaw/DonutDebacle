@@ -42,9 +42,9 @@ class DonutMaker {
 
     reset(){
         this._donutCount=0;
-        this._autoClickerCost=0;
+        this._autoClickerCost=100;
         this._autoClickerCount=0;
-        this._donutMultiplierCost=0;
+        this._donutMultiplierCost=10;
         this._donutMultiplierCount=0;
         
     }

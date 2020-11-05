@@ -58,13 +58,14 @@ resetClick.addEventListener("click", () => {
     updateDonutCounter(newDonutMaker);
     updateAutoClickerCounter(newDonutMaker);
     updateDonutMultiplierCounter(newDonutMaker);
+
 });
 
 
 function updateAutoClickerButton(donutMaker) {
     const lightUpAutoClickerButton = document.querySelector(".autoclicker-purchase-button");
     lightUpAutoClickerButton.classList.add("ungreybutton");
-    if (donutMaker.donutCount < 100) {
+    if (donutMaker.donutCount < donutMaker.autoClickerCost) {
         lightUpAutoClickerButton.classList.toggle("ungreybutton");
     };
 }
@@ -72,7 +73,7 @@ function updateAutoClickerButton(donutMaker) {
 function updateDonutMultiplierButton(donutMaker) {
     const lightUpDonutMultiplierButton = document.querySelector(".donut-multiplier-purchase-button");
     lightUpDonutMultiplierButton.classList.add("ungreybutton");
-    if (donutMaker.donutCount < 10) {
+    if (donutMaker.donutCount < donutMaker.donutMultiplierCost) {
         lightUpDonutMultiplierButton.classList.toggle("ungreybutton");
     };
 }
