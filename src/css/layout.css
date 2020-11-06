@@ -10,7 +10,6 @@
     margin-top: 20px;
     margin-left: 20px;
     
-    
 }
 
 .menu-items li{
@@ -20,7 +19,6 @@
     max-width: 1000px;
     width: 90%;
 }
-
 
 .page-header{
     text-align: center;
@@ -98,6 +96,7 @@
 }
 
 .autoclicker-purchase-button{
+    margin-top: 10px;
     margin-bottom: 10px;
     align-items: center;
 }
@@ -111,9 +110,24 @@
 }
 
 .donut-multiplier-purchase-button{
+    margin-top: 10px;
     margin-bottom: 10px;
 }
 
 .donut-multiplier-count{
     margin-bottom: 10px;
+}
+
+.socialmedia{
+    margin-top: 25px;
+    text-align: center;
+}
+
+.name{
+    text-align: center;
+}
+
+.bio-pic{
+    margin-top: 5px;
+    text-align: center;
 }

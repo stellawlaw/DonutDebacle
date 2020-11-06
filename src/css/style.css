@@ -60,6 +60,16 @@ html{
     font-size: 1.2rem;
 }
 
+.name{
+    color: black;
+}
+
+.bio{
+    color: black;
+    text-align: center;
+}
+
+
 .modal-actions{
     display: flex;
     justify-content: flex-end;
@@ -67,5 +77,14 @@ html{
 
 .modal-actions button{
     font-size: 20px;
-    
+}
+
+.socialmedia img{
+    border-radius: 5px;
+    width: 7%;
+}
+
+.bio-pic img{
+    border-radius: 5px;
+    width: 15%;
 }
