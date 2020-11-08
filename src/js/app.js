@@ -46,6 +46,7 @@ donutClick.addEventListener("click", () => {
     updateDonutCounter(newDonutMaker);
 });
 
+
 function updateAutoClickerButton(donutMaker) {
     const lightUpAutoClickerButton = document.querySelector(".autoclicker-purchase-button");
     lightUpAutoClickerButton.classList.add("ungreybutton");
@@ -63,21 +64,6 @@ function updateDonutMultiplierButton(donutMaker) {
     };
 }
 
-//reset button
-updateDonutCounter(newDonutMaker);
-const resetClick = document.querySelector(".reset-button");
-
-resetClick.addEventListener("click", () => {
-    newDonutMaker.reset();
-    updateDonutCounter(newDonutMaker);
-    updateDonutMultiplierCount(newDonutMaker);
-    updateDonutMultiplierCost(newDonutMaker);
-    updateDonutMultiplierValue(newDonutMaker);
-    updateAutoClickerCounter(newDonutMaker);
-    updateAutoClickerCost(newDonutMaker);
-    updateAutoClickerValue(newDonutMaker);
-
-});
 
 //AutoClicker Elements
 
@@ -90,10 +76,7 @@ const updateAutoClickerCost = function (newDonutMaker) {
     const autoClickerCost = document.querySelector(".auto-clicker-cost");
     autoClickerCost.innerText = newDonutMaker.autoClickerCost;
 };
-const updateAutoClickerValue = function (newDonutMaker) {
-    const autoClickerValue = document.querySelector(".auto-clicker-value");
-    autoClickerValue.innerText = newDonutMaker.autoClickerValue;
-};
+
 
 updateAutoClickerCount(newDonutMaker);
 const autoClickerClick = document.querySelector(".autoclicker-purchase-button");
@@ -134,6 +117,22 @@ donutMultiplierClick.addEventListener("click", () => {
   
 });
 
+//reset button
+// updateDonutCounter(newDonutMaker);
+const resetClick = document.querySelector(".reset-button");
+
+resetClick.addEventListener("click", () => {
+
+    newDonutMaker.reset();
+    updateDonutCounter(newDonutMaker);
+    updateAutoClickerCount(newDonutMaker);
+    updateAutoClickerCost(newDonutMaker);
+    updateDonutMultiplierCount(newDonutMaker);
+    updateDonutMultiplierCost(newDonutMaker);
+    updateDonutMultiplierValue(newDonutMaker);
+ 
+
+});
 
 
 

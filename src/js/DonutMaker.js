@@ -7,7 +7,7 @@ class DonutMaker {
         this._donutMultiplierCount = 0;
         this._donutMultiplierCost = 10;
         this._donutMultiplierValue = 1;
-        this._autoClickerValue = this._donutCount + this._autoClickerCount;
+        
 
     }
     //Testers
@@ -28,10 +28,10 @@ class DonutMaker {
 
     reset() {
         this._donutCount = 0;
-        this._autoClickerCost = 100;
         this._autoClickerCount = 0;
-        this._donutMultiplierCost = 10;
+        this._autoClickerCost = 100;
         this._donutMultiplierCount = 0;
+        this._donutMultiplierCost = 10;
         this._donutMultiplierValue = 1;
 
     }
@@ -39,14 +39,17 @@ class DonutMaker {
     recordManualClick() {
         if (this._donutMultiplierCount === 0 && this._autoClickerCount === 0) {
             this._donutCount++;
+
         }else if(this._autoClickerCount === 0 && this._donutMultiplierCount !==0){
             this._donutCount = this._donutCount + Math.pow(1.2, this._donutMultiplierCount);
         }
+
         else if(this._autoClickerCount !== 0 && this._donutMultiplierCount === 0){
-            this._donutCount = this._donutCount + this._autoClickerCount;
+            this._donutCount = this._donutCount + 1 +  this._autoClickerCount;
         }
+
         else{
-            this._donutCount = this._donutCount + this._autoClickerCount * Math.pow(1.2, this._donutMultiplierCount);
+            this._donutCount = this._donutCount + (this._autoClickerCount + 1) * Math.pow(1.2, this._donutMultiplierCount);
         }
     }
 
