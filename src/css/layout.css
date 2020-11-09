@@ -4,22 +4,6 @@
     box-sizing: border-box;
 }
 
-.menu{
-    display: flex;
-    justify-content: flex-start;
-    margin-top: 20px;
-    margin-left: 20px;
-    
-}
-
-.menu-items li{
-    display: inline-block;
-    list-style: none;
-    padding-left: 20px;
-    max-width: 1000px;
-    width: 90%;
-}
-
 .page-header{
     text-align: center;
     max-width: 1000px;
@@ -84,7 +68,7 @@
 }
 
 .shop{
-    margin-left: 150px;
+    margin-left: 50px;
 }
 
 .shop h2{
@@ -98,7 +82,7 @@
 .autoclicker-purchase-button{
     margin-top: 10px;
     margin-bottom: 10px;
-    align-items: center;
+    
 }
 
 .auto-clicker-count{
@@ -123,11 +107,11 @@
     text-align: center;
 }
 
-.name{
-    text-align: center;
+
+.developer-bio{
+    display: grid;
+    grid-template-columns: 70% 150%;
+    gap: 2%;
+
 }
 
-.bio-pic{
-    margin-top: 5px;
-    text-align: center;
-}
