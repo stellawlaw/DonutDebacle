@@ -69,10 +69,10 @@ describe('Iteration 1-FEATURE 3: The cost of each Auto Clicker will go up with e
 
     it('Should increase the cost of the second Auto Clicker by an additional ten percent.', () => {
         underTest.autoClickerPurchase();
-        expect(underTest.autoClickerCost).toBe(100);
+        expect(underTest._autoClickerCost).toBe(110);
         expect(underTest._autoClickerCount).toBe(1);
         underTest.autoClickerPurchase();
-        expect(underTest.autoClickerCost).toBe(110);
+        expect(underTest._autoClickerCost).toBe(121);
         expect(underTest._donutCount).toBe(790);
     });
 
@@ -121,7 +121,7 @@ describe('Iteration 1-FEATURE 5 : The amount of Auto Clickers affect the amount 
     it('Should increase the donut total by the amount of Auto Clickers owned when activate Auto Clickers is executed.', () => {
         underTest.activateAutoClicker();
         underTest.recordManualClick();
-        expect(underTest._donutCount).toBe(1011);
+        expect(underTest._donutCount).toBe(1021);
     });
 });
 
@@ -217,8 +217,8 @@ describe('Iteration 2- FEATURE 6: The Donut Multipliers click bonus will apply t
     it('When an Add Auto Clickers event is executed, increase the value of each Auto Clicker by the amount of the Donut Multiplier.', () => {
         underTest.recordDonutMultiplier();
         underTest.activateAutoClicker();
-        expect(underTest._autoClickerCount).toBe(22);
-        expect(underTest._donutCount).toBe(2222);
+        expect(underTest._autoClickerCount).toBe(10);
+        expect(underTest._donutCount).toBe(2210);
       
     });
 });

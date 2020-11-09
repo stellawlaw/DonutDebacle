@@ -41,6 +41,7 @@ const exitButton2 = document.querySelector(".exit2");
 exitButton2.addEventListener("click", closeModal2);
 backdrop2.addEventListener("click", closeModal2);
 
+
 //Donut Counter Elements
 const newDonutMaker = new DonutMaker();
 
@@ -172,7 +173,6 @@ resetClick.addEventListener("click", () => {
     updateDonutMultiplierCount(newDonutMaker);
     updateDonutMultiplierCost(newDonutMaker);
     updateDonutMultiplierValue(newDonutMaker);
- 
 
 });
 
