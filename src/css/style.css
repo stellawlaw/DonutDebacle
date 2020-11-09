@@ -13,11 +13,8 @@ html{
 }
 
 :root{
-    --yellow: #FFBE0B;
-    --orange: #FB5607;   
-    --purple: #8338EC;  
+
     --blue: #2161c9;
-    --pink: #FF006E;
 
 }
 
@@ -39,7 +36,7 @@ html{
 }
 
 .level-light{
-    color: rgb(189, 53, 3);
+    color: rgb(216, 126, 8);
     font-size: 100px
 }
 
@@ -70,7 +67,7 @@ html{
     border: none;
     outline: none;
     color: white;
-    padding: 14px 16px;
+    padding: 17px 16px;
     background-color: inherit;
   }
   

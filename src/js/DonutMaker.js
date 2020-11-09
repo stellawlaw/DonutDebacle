@@ -7,8 +7,6 @@ class DonutMaker {
         this._donutMultiplierCount = 0;
         this._donutMultiplierCost = 10;
         this._donutMultiplierValue = 1;
-        
-
     }
     //Testers
     stashDonutsForTesting() {

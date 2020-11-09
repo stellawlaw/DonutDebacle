@@ -30,7 +30,6 @@
     font-size: 20px;
 }
 
-
 .container{
     display: grid;
     grid-template-rows: 100px auto;
@@ -87,6 +86,7 @@
 
 .auto-clicker-count{
     margin-bottom: 10px;
+    margin-left: 75px;
 }
 
 .donut-multiplier-cost{
@@ -100,13 +100,16 @@
 
 .donut-multiplier-count{
     margin-bottom: 10px;
+    margin-left: 75px;
 }
 
 .socialmedia{
-    margin-top: 25px;
+    margin-top: 15px;
     text-align: center;
 }
-
+.baker-pic{
+    text-align: center;
+}
 
 .developer-bio{
     display: grid;
