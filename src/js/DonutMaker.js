@@ -65,7 +65,7 @@ class DonutMaker {
     }
 
     activateAutoClicker() {
-
+        
         if (this._donutMultiplierCount >= 1) {
             this._donutCount = this._donutCount + this.autoClickerCount;
         }
