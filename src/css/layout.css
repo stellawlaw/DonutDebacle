@@ -7,9 +7,9 @@
 .container{
     display: grid;
     grid-template-rows: 100px auto;
-    margin: 2rem auto;
+    margin: 3rem auto;
     max-width: 1000px;
-    width: 90%;
+    max-height: 100vh;
 
 }
 
